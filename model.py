@@ -3,7 +3,6 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 # Functions and procedures
 def plot_predictions(train_data, train_labels,  test_data, test_labels,  predictions):
   """
@@ -62,6 +61,9 @@ y_train = y[:N]
 X_test = X[N:] # last 10 examples (20% of data)
 y_test = y[N:]
 
+# Reshape data to have 2 dimensions
+X_train = X_train.reshape(-1, 1)
+X_test = X_test.reshape(-1, 1)
 
 # Take a single example of X
 input_shape = X[0].shape 
