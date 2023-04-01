@@ -3,7 +3,6 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 # Functions and procedures
 def plot_predictions(train_data, train_labels,  test_data, test_labels,  predictions):
   """
@@ -46,6 +45,8 @@ def mse(y_test, y_pred):
 # Check Tensorflow version
 print(tf.__version__)
 
+# Change Matplotlib font
+plt.rcParams["font.family"] = "DejaVu Sans"
 
 # Create features
 X = np.arange(-100, 100, 4)
@@ -62,6 +63,9 @@ y_train = y[:N]
 X_test = X[N:] # last 10 examples (20% of data)
 y_test = y[N:]
 
+# Reshape data to have 2 dimensions
+X_train = X_train.reshape(-1, 1)
+X_test = X_test.reshape(-1, 1)
 
 # Take a single example of X
 input_shape = X[0].shape 
@@ -85,7 +89,7 @@ model.compile(loss = tf.keras.losses.mae,
               metrics = ['mae'])
 
 # Fit the model
-model.fit(X_train, y_train, epochs=100)
+model.fit(X_train, y_train, epochs=150)
 
 
 # Make and plot predictions for model_1
