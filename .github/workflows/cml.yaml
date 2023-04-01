@@ -18,6 +18,6 @@ jobs:
       - name: Train model
         run: |
           # Your ML workflow goes here
-          apt install msttcorefonts -qq
+          apt install ttf-mscorefonts-installer -qq
           pip install -r requirements.txt
           python model.py
