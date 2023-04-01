@@ -18,7 +18,8 @@ jobs:
       - name: Train model
         run: |
           # Your ML workflow goes here
-          apt-get update
+          apt-get update -qq
           apt install ttf-mscorefonts-installer -qq
           pip install -r requirements.txt
+          fc-cache -f -v
           python model.py
