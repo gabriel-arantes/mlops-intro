@@ -45,6 +45,8 @@ def mse(y_test, y_pred):
 # Check Tensorflow version
 print(tf.__version__)
 
+# Change Matplotlib font
+plt.rcParams["font.family"] = "DejaVu Sans"
 
 # Create features
 X = np.arange(-100, 100, 4)
